@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="container" th:fragment="body">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <img src="../../../static/images" th:src="@{/images/Fruits.jpg}"
+                     alt="" class="img-thumbnail card-img-bottom">
+            </div>
+            <div class="col-sm-4">
+                <img src="../../../static/images" th:src="@{/images/Electronics.jpg}"
+                     alt="" class="img-thumbnail card-img-bottom">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <img src="../../../static/images" th:src="@{/images/Clothes.jpg}"
+                     alt="" class="img-thumbnail">
+            </div>
+            <div class="col-sm-4">
+                <img src="../../../static/images" th:src="@{/images/Books.jpg}"
+                     alt="" class="img-thumbnail">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+
+
+</body>
+</html>

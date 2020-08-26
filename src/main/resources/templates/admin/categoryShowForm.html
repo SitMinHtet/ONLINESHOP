@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
+ th:href="@{/bootstrap/css/bootstrap.min.css}">
+
+<body>
+
+<div th:replace=" layout/adminlayout :: adminlayoutheader"></div>
+
+    <div class="container">
+        <div class="table-response">
+            <table class="table mt-5">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cat :${showCate}">
+                    <td th:text="${cat.id}"></td>
+                    <td th:text="${cat.name}"></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">OK </button>
+    </div>
+
+</body>
+</html>
