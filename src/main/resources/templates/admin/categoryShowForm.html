@@ -11,8 +11,12 @@
 
 <div th:replace=" layout/adminlayout :: adminlayoutheader"></div>
 
+
     <div class="container">
-        <div class="table-response">
+        <div class="table-response mt-5">
+            <div th:if="${success}">
+                <p class="alert alert-success" role="alert">New Category Successfully Created!!!</p>
+            </div>
             <table class="table mt-5">
                 <thead>
                 <tr>

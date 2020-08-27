@@ -16,7 +16,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @GetMapping("/create")
+    @GetMapping("/createCategory")
     public String create(Model model){
         model.addAttribute("createCate",new Category());
         return "admin/categoryForm";
@@ -35,7 +35,7 @@ public class CategoryController {
     @GetMapping("/categoryShowForm")
     public String showAllCategories(Model model){
         model.addAttribute("showCate",categoryService.finAll());
-
+        model.addAttribute("success",model.containsAttribute("success"));
         return "admin/categoryShowForm";
     }
 }
