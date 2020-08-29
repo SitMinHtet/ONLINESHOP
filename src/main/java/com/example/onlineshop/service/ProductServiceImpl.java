@@ -12,6 +12,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService{
     private  final ProductRepository productRepository;
 
+
     @Override
     public Product create(Product product) {
         return productRepository.save(product);
@@ -33,5 +34,11 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> findAll() {
         return productRepository.findAll();
     }
+
+    @Override
+    public List<Product> findProductByCategoryId(int id) {
+        return productRepository.findProductByCategoryId(id);
+    }
+
 
 }

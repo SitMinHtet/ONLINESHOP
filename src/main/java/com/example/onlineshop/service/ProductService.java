@@ -10,4 +10,5 @@ public interface ProductService {
     Product findById(int id);
     //Product update(Product product);
     List<Product> findAll();
+    List<Product> findProductByCategoryId(int id);
 }

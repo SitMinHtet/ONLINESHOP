@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
           th:href="@{/bootstrap/css/bootstrap.min.css}">
 <body>
-
+    <div th:fragment="userheader">
     <div th:replace="layout/fragments/header :: header"></div>
     <div th:replace="layout/fragments/headerImg :: headerimage"></div>
+    </div>
 
     <h1>User Page</h1>
     <div th:replace="layout/fragments/body :: body"></div>

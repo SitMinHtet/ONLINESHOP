@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
+      th:href="@{/bootstrap/css/bootstrap.min.css}">
+<body>
+
+<div th:replace="layout/userlayout :: userheader"></div>
+<h1>ProductByCategory</h1>
+
+<div class="container mb-5">
+<div class="row">
+    <div class="col-sm-4" th:each="pro :${ProByCate}">
+        <div class="card"  style="width: 18rem;">
+            <img class="card-img-top" style="height: 250px" th:src="@{'/images/'+ ${pro.name}+ '.jpg'}" src="../../static/images/" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${pro.name}"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text" th:text="${'$' + pro.price}"></p>
+                <p class="card-text" th:text="${pro.quantity + 'items'}"></p>
+                <a href="#" class="btn btn-primary mb-3" th:href="@{'/product/' + ${pro.id}}">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div th:replace="layout/fragments/footer :: footer"></div>
+
+</body>
+</html>
