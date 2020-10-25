@@ -5,39 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+    <div th:fragment="body">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                    <a href="#" th:href="@{/home/showProductByCate/1}">
+                        <div class="header">Fruits</div>
+                        <img class="img-fluid img-thumbnail" style="height: 250px; width: 300px" src="../../../static/images/Fruits" th:src="@{/images/Fruits/Fruits.jpg}" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <img class="img-fluid img-thumbnail" style="height: 250px; width: 300px" src="../../../static/images/Clothes" th:src="@{/images/Clothes/Clothes.jpg}" alt="">
+                </div>
+                <div class="col-sm-3">
+                    <img class="img-fluid img-thumbnail" style="height: 250px; width: 300px" src="../../../static/images/Electronic" th:src="@{/images/Electronic/Electronics.jpg}" alt="">
+                </div>
+                <div class="col-sm-3">
+                    <img class="img-fluid img-thumbnail" style="height: 250px; width: 300px" src="../../../static/images/Books" th:src="@{/images/Books/Books.jpg}" alt="">
+                </div>
+            </div>
 
-    <div class="container" th:fragment="body">
-        <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <a href="#"  th:href="@{/home/category/1}">
-                    <img style="height: 200px; width: 350px" src="../../../static/images" th:src="@{/images/Fruits.jpg}"
-                     alt="" class="img-thumbnail card-img-bottom">
-                </a>
-            </div>
-            <div class="col-sm-4">
-                <img style="height: 200px; width: 350px" src="../../../static/images" th:src="@{/images/Electronics.jpg}"
-                     alt="" class="img-thumbnail card-img-bottom">
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-                <img style="height: 200px; width: 350px" src="../../../static/images" th:src="@{/images/Clothes.jpg}"
-                     alt="" class="img-thumbnail">
-            </div>
-            <div class="col-sm-4">
-                <img style="height: 200px; width: 350px" src="../../../static/images" th:src="@{/images/Books.jpg}"
-                     alt="" class="img-thumbnail">
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <div class="row">
+            <div class="row mb-5">
+                <div class="col-sm-3">
+                    <img class="img-fluid img-thumbnail" style="height: 250px; width: 300px" src="../../../static/images/Flowers/" th:src="@{/images/Flowers/Flowers.jpeg}" alt="">
+                </div>
+                <div class="col-sm-3">
 
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
         </div>
     </div>
-
 
 </body>
 </html>

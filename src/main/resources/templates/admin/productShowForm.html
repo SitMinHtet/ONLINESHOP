@@ -7,38 +7,40 @@
 <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
     th:href="@{/bootstrap/css/bootstrap.min.css}">
 <body>
-<div th:replace=" layout/adminlayout :: adminlayoutheader"></div>
-
+<div th:replace="layout/adminlayout :: adminheader"></div>
 
     <div class="container">
-        <div class="table-responsive mt-2">
-            <div th:if="${success}">
-                <p class="alert alert-success" role="alert">New Product Successfully Created!!!</p>
-            </div>
-            <table class="table mt-5">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Last Updated</th>
-                        <th>Category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="pro :${showPro}">
-                        <td th:text="${pro.id}"></td>
-                        <td th:text="${pro.name}"></td>
-                        <td th:text="${pro.quantity}"></td>
-                        <td th:text="${pro.price}"></td>
-                        <td th:text="${pro.lateUpdated}"></td>
-                        <td th:text="${pro.category.name}"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div th:if="${success}">
+            <p class="alert alert-success mt-3" role="alert">
+                New Product Successfully Created.
+            </p>
         </div>
-    </div>
+
+        <table class="table mt-5">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Last Updated</th>
+                <th scope="col">Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pro : ${allPro}">
+                <th th:text="${pro.id}"></th>
+                <td th:text="${pro.name}"></td>
+                <td th:text="${pro.quantity}"></td>
+                <td th:text="${'$ '+ pro.price}"></td>
+                <td th:text="${pro.lastUpdated}"></td>
+                <td th:text="${pro.category.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    <a class="btn btn-primary" href="#" th:href="@{/createProduct}" role="button">OK</a>
+</div>
+
+<div th:replace="layout/userlayout :: userfooter"></div>
 </body>
 </html>

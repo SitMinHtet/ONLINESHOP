@@ -1,10 +1,8 @@
 package com.example.onlineshop.service;
 
 import com.example.onlineshop.domain.Category;
-import com.example.onlineshop.repository.CategoryRepository;
+import com.example.onlineshop.repository.CategoryRepo;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -14,21 +12,21 @@ import java.util.List;
 @Data
 public class CategoryServiceImpl implements CategoryService{
 
-    private final CategoryRepository categoryRepository;
+    private final CategoryRepo categoryRepo;
 
     @Override
     public Category create(Category category) {
-        return categoryRepository.save(category);
+        return categoryRepo.save(category);
     }
 
     @Override
     public Category findById(int id) {
-        return categoryRepository.findById(id)
-                .orElseThrow(()->new EntityNotFoundException(id + " is not found"));
+        return categoryRepo.findById(id)
+                .orElseThrow(()->new EntityNotFoundException("Id is not found"));
     }
 
     @Override
-    public List<Category> finAll() {
-        return categoryRepository.findAll();
+    public List<Category> findAll() {
+        return categoryRepo.findAll();
     }
 }

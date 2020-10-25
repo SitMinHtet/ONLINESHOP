@@ -8,7 +8,7 @@ public interface ProductService {
 
     Product create(Product product);
     Product findById(int id);
-    //Product update(Product product);
     List<Product> findAll();
-    List<Product> findProductByCategoryId(int id);
+    //List<Product> findByCategoryId(int id);
+    List<Product> findProductByCategoryID(int id);
 }

@@ -6,9 +6,11 @@ import lombok.Data;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
+
 
 @Controller
 @Data
@@ -16,15 +18,14 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @GetMapping("/createCategory")
+    @GetMapping("createCategory")
     public String create(Model model){
-        model.addAttribute("createCate",new Category());
+        model.addAttribute("createCate", new Category());
         return "admin/categoryForm";
     }
 
-    @PostMapping("/category")
-    public String process(@Validated Category category, BindingResult result){
-
+    @PostMapping("showCategory")
+    public String process(@Valid Category category, Model model, BindingResult result){
         if(result.hasErrors()){
             return "admin/categoryForm";
         }
@@ -32,10 +33,10 @@ public class CategoryController {
         return "redirect:/categoryShowForm";
     }
 
-    @GetMapping("/categoryShowForm")
-    public String showAllCategories(Model model){
-        model.addAttribute("showCate",categoryService.finAll());
-        model.addAttribute("success",model.containsAttribute("success"));
+    @GetMapping("categoryShowForm")
+    public String showAllCategory(Model model){
+        model.addAttribute("allCate", categoryService.findAll());
         return "admin/categoryShowForm";
     }
+
 }

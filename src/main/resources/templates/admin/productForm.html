@@ -7,58 +7,51 @@
 <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
       th:href="@{/bootstrap/css/bootstrap.min.css}">
 <body>
-
-<div th:replace=" layout/adminlayout :: adminlayoutheader"></div>
-
-<div class="container">
-<form action="#" th:object="${createPro}" th:action="@{/product}" method="post">
-
-        <div class="form-group row mt-5">
-            <label for="name" class="col-form-label col-sm-2" >Name</label>
-            <div class="col-sm-8">
-            <input id="name" type="text" class="form-control" th:field="*{name}">
+<div th:replace="layout/adminlayout :: adminheader"></div>
+    <form action="#" th:object="${createPro}" th:action="@{showProduct}" method="post">
+        <div class="container">
+            <div class="form-group row mt-5">
+                <label for="name" class="col-sm-2 col-form-label">Product Name</label>
+                <div class="col-sm-8">
+                 <input type="text" class="form-control" id="name" th:field="*{name}">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="quantity" th:field="*{quantity}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="price" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-8">
+                    <input type="number" step="any" class="form-control" id="price" th:field="*{price}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="ldate" class="col-sm-2 col-form-label">Last Updated</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" id="ldate" th:field="*{lastUpdated}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cate" class="col-sm-2 col-form-label">Category</label>
+                <div class="col-sm-8">
+                    <select class="custom-select" id="cate" th:field="*{category}">
+                        <option th:each="cat :${category}"
+                        th:value="${cat.id}" th:text="${cat.name}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                 <button class="btn btn-primary" type="submit">Add Product</button>
+                </div>
             </div>
         </div>
-
-        <div class="form-group row">
-            <label for="quantity" class="col-form-label col-sm-2">Quantity</label>
-            <div class="col-sm-8">
-                <input id="quantity" type="number" class="form-control" th:field="*{quantity}">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="price" class="col-form-label col-sm-2">Price</label>
-            <div class="col-sm-8">
-                <input id="price" type="number" step="any" class="form-control" th:field="*{price}">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="date" class="col-form-label col-sm-2">Last Updated</label>
-            <div class="col-sm-8">
-                <input id="date" type="date" th:field="*{lateUpdated}" class="form-control">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="category" class="col-form-label col-sm-2">Category</label>
-            <div class="col-sm-8">
-            <select name="category" id="category" class="form-control" th:field="*{category}">
-                <option
-                        value="" th:each="cat :${existcate}"
-                 th:value="${cat.id}" th:text="${cat.name}">
-
-                </option>
-            </select>
-            </div>
-        </div>
-
-    <button class="btn btn-primary" type="submit">Submit</button>
-
-
-</form>
-</div>
+    </form>
+<div th:replace="layout/userlayout :: userfooter"></div>
 
 </body>
 </html>

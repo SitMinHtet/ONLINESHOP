@@ -5,7 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data
@@ -18,7 +17,7 @@ public class Product {
     private int quantity;
     private double price;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate lateUpdated;
+    private LocalDate lastUpdated;
 
     @ManyToOne
     private Category category;

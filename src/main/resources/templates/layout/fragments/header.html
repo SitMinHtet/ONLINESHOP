@@ -7,33 +7,33 @@
 <link rel="stylesheet" href="../../../static/bootstrap/css/bootstrap.min.css"
       th:href="@{/bootstrap/css/bootstrap.min.css}">
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
-    <a class="navbar-brand" th:href="@{/home}">Home</a>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;" th:fragment="header">
+    <a class="navbar-brand" href="#" th:href="@{/home}">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/createCategory}">New Category<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/createProduct}">New Product</a>
-            </li>
-
             <li class="nav-item">
-                <a class="nav-link " th:href="@{/categoryShowForm}">Categories</a>
+                <a class="nav-link" href="#" th:href="@{/createCategory}">New_Category</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " th:href="@{/productShowForm}">Products</a>
+                <a class="nav-link" href="#" th:href="@{/categoryShowForm}">Category_Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/createProduct}">New_Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" th:href="@{/productShowForm}">Product_Details</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <ul  class="nav navbar-nav navbar-right">
+            <li>
+                SMH SHOP
+            </li>
+        </ul>
     </div>
-    </nav>
+</nav>
 </body>
 </html>
