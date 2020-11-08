@@ -11,17 +11,18 @@
 <div class="container mt-3">
     <div class="row mb-5 mt-3">
         <div class="col-sm-4" th:each="pro : ${proByCate}">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../static/images/Fruits/" style="height: 250px;"
-                         th:src="@{'/images/Fruits/' + ${pro.name} + '.jpg'}" alt="Card image cap">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="../../static/images"  style="height: 250px;"
+                     th:src="@{'/resources/static/images/' + ${pro.name} + '.jpg'}" alt="Card image cap">
 
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${pro.name}"></h5>
-                        <p class="card-text" th:text="${'$ '+pro.price}"></p>
-                        <p class="card-text" th:text="${pro.quantity + ' items'}"></p>
-                        <a th:href="@{'/detail/'+${pro.id}}" class="btn btn-primary">Details</a>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${pro.name}"></h5>
+                    <p class="card-text" th:text="${'$ '+pro.price}"></p>
+                    <p class="card-text" th:text="${pro.quantity + ' items'}"></p>
+                    <a th:href="@{'/detail/'+${pro.id}}" class="btn btn-primary">Details</a>
                 </div>
+            </div>
+
         </div>
     </div>
 </div>
